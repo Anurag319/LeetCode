@@ -11,8 +11,8 @@ public:
         int sum = 0, ans = 0;
         for(int i=0;i<n;i++){
             sum += nums[i];
-            sum %= k;
-            sum = (sum+k)%k;
+            sum %= k; // if sum = -9 --> sum%5 = -4, thats why need to mod again with +k
+            sum = (sum+k)%k; 
             ans += mp[sum];
             
             mp[sum]++;
