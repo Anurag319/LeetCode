@@ -14,3 +14,5 @@ Initially - (1) pq, {0,{0,0}} - 1
             (7) {2,{2,1}} - 7
             (8) {2,{2,2}} - 8 
             (9) Ans
+
+Approach 2 - Binary search on answer + do BFS on that answer
