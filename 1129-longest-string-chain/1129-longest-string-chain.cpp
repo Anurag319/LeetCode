@@ -1,24 +1,18 @@
 class Solution {
 public:
-
+    static bool cmp(string &a,string &b){
+        return a.size()<b.size();
+    }
     int longestStrChain(vector<string>& words) {
 
        int n = words.size();
 
-       vector<string> nwords;
-
-       for(int sz=1;sz<=16;sz++){
-           for(int i=0;i<n;i++){
-               if(words[i].size()==sz){
-                   nwords.push_back(words[i]);
-               }
-           }
-       }
+       sort(words.begin(),words.end(),cmp);
 
        vector<int> dp(n,1);
         for(int i=1;i<n;i++){
             for(int j=i-1;j>=0;j--){
-                if(same(nwords[j],nwords[i])){
+                if(same(words[j],words[i])){
                     dp[i] = max(dp[i],dp[j]+1);
                 }
             }
