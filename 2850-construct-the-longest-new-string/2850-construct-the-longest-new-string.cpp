@@ -2,12 +2,13 @@ class Solution {
 public:
     int longestString(int x, int y, int z) {
         
-        int minn = 3*min(x,min(y,z));
-        cout<<minn<<endl;
-        x = max(0,x-minn/3);
-        y = max(0,y-minn/3);
-        z = max(0,z-minn/3);
+        int minn = min(x,min(y,z));
 
+        x = max(0,x-minn);
+        y = max(0,y-minn);
+        z = max(0,z-minn);
+
+        minn *= 3;
         if(z<=0){
             if(x!=y){
                 minn += 2*min(x,y) + 1;
