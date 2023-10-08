@@ -15,18 +15,7 @@ public:
             }
         }
 
-        bool ok = false;
-        for(int i=0;i<n1;i++){
-            if(nums1[i]==0) ok=1;
-        }
-        for(int i=0;i<n2;i++){
-            if(nums2[i]==0) ok=1;
-        }       
-
         int k = f(0,0,n1,n2,nums1,nums2);
-        if(ok){
-            return k;
-        }
 
         if(maxx<0) return maxx;
         return k;
